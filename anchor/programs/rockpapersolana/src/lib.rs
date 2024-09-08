@@ -15,7 +15,15 @@ declare_id!("47jiKP91AgzgQdZXrDD7R8HBEpjngAiUaCmM5uMo1ef8");
 pub mod rockpapersolana {
     use super::*;
 
-    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
-        initialize::handler(ctx)
+    pub fn init(ctx: Context<Init>) -> Result<()> {
+        ctx.accounts.init(&ctx.bumps)
+    }
+
+    pub fn request_match(ctx: Context<RequestMatch>) -> Result<()> {
+        ctx.accounts.request_match(&ctx.bumps)
+    }
+
+    pub fn save_moves(ctx: Context<SaveMoves>, moves: u8) -> Result<()> {
+        ctx.accounts.save_moves(moves)
     }
 }
