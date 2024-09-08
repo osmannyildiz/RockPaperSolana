@@ -1,19 +1,7 @@
-import { Step, useMainStore } from "../store";
-
-function JoinGameScreen() {
-  const setStep = useMainStore((state) => state.setStep);
-
+function ResultScreen() {
   return (
     <>
-      <button
-        type="button"
-        className="px-4 py-4 bg-orange-700 rounded text-fancy hover:scale-125 transition-transform"
-        onClick={() => {
-          setStep(Step.lobby);
-        }}
-      >
-        Join Game
-      </button>
+      <span className="text-fancy">result screen</span>
       <img
         src="/rock-optimized.svg"
         alt=""
@@ -33,4 +21,4 @@ function JoinGameScreen() {
   );
 }
 
-export default JoinGameScreen;
+export default ResultScreen;

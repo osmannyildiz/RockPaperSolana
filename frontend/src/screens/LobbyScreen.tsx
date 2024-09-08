@@ -1,19 +1,18 @@
+import { useEffect } from "react";
 import { Step, useMainStore } from "../store";
 
-function JoinGameScreen() {
+function LobbyScreen() {
   const setStep = useMainStore((state) => state.setStep);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setStep(Step.game);
+    }, 3000);
+  });
 
   return (
     <>
-      <button
-        type="button"
-        className="px-4 py-4 bg-orange-700 rounded text-fancy hover:scale-125 transition-transform"
-        onClick={() => {
-          setStep(Step.lobby);
-        }}
-      >
-        Join Game
-      </button>
+      <span className="text-fancy">Looking for a worthy opponent...</span>
       <img
         src="/rock-optimized.svg"
         alt=""
@@ -33,4 +32,4 @@ function JoinGameScreen() {
   );
 }
 
-export default JoinGameScreen;
+export default LobbyScreen;
