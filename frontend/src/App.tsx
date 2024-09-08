@@ -8,12 +8,8 @@ import { Step, useMainStore } from "./store";
 
 function App() {
   const currentStep = useMainStore((state) => state.currentStep);
-  const showWaitScreen = useMainStore((state) => state.showWaitScreen);
 
   const currentScreen = useMemo(() => {
-    if (showWaitScreen) {
-      return <WaitScreen />;
-    }
     switch (currentStep) {
       case Step.first:
         return <JoinGameScreen />;
@@ -21,12 +17,14 @@ function App() {
         return <LobbyScreen />;
       case Step.game:
         return <GameScreen />;
+      case Step.wait:
+        return <WaitScreen />;
       case Step.result:
         return <ResultScreen />;
       default:
-        return <JoinGameScreen />;
+        alert("SOMETHING WENT WRONG");
     }
-  }, [showWaitScreen, currentStep]);
+  }, [currentStep]);
 
   return (
     <main className="flex flex-col justify-center items-center h-full relative">

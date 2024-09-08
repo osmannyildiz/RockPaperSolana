@@ -1,4 +1,15 @@
+import { useEffect } from "react";
+import { Step, useMainStore } from "../store";
+
 function WaitScreen() {
+  const setStep = useMainStore((state) => state.setStep);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setStep(Step.result);
+    }, 1000);
+  });
+
   return (
     <>
       <span className="text-fancy">Hold tight...</span>

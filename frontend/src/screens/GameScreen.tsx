@@ -23,7 +23,7 @@ const getIconForMove = (move: Move) => {
 };
 
 function GameScreen() {
-  const [timeLeft, setTimeLeft] = useState(15);
+  const [timeLeft, setTimeLeft] = useState(10);
   const [movesMade, setMovesMade] = useState(0);
   const [moves, setMoves] = useState([
     Move.none,
@@ -36,7 +36,7 @@ function GameScreen() {
 
   useEffect(() => {
     if (timeLeft < 0) {
-      setStep(Step.result);
+      setStep(Step.wait);
     }
     const timeout = setTimeout(() => {
       setTimeLeft((val) => val - 1);

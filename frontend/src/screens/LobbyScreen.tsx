@@ -7,7 +7,7 @@ function LobbyScreen() {
   useEffect(() => {
     setTimeout(() => {
       setStep(Step.game);
-    }, 3000);
+    }, 2000);
   });
 
   return (

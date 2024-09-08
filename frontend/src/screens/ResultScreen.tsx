@@ -1,7 +1,8 @@
 function ResultScreen() {
   return (
     <>
-      <span className="text-fancy">result screen</span>
+      <span className="text-fancy text-8xl">YOU WON!</span>
+      <span className="text-fancy">Winner winner NFT dinner</span>
       <img
         src="/rock-optimized.svg"
         alt=""
